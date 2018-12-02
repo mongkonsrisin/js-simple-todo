@@ -27,7 +27,7 @@
     addButton.addEventListener('click',function() {
       var text = todoText.value.trim();
       if(text != '') {
-        var newTodo = document.createElement('li')
+        var newTodo = document.createElement('li');
         newTodo.className = 'list-group-item list-group-item-warning list-group-item-action';
         newTodo.textContent = text;
         newTodo.addEventListener('click',function(e) {
