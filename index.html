@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TODO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+  <body class="bg-light">
+    <div class="container" style="max-width:480px;">
+      <h1 class="text-center text-danger mt-5 mb-3 font-weight-bold">TODO</h1>
+      <div class="form-group">
+          <input id="todoText" type="text" placeholder="What is your TODO ?" class="form-control form-control-lg">
+      </div>
+      <div class="form-group">
+          <button id="addButton" type="button" class="btn btn-block btn-success btn-lg">ADD</button>  
+      </div>
+      <hr>
+      <ul id="todoList" class="list-group font-weight-bold text-truncate">
+           
+      </ul>
+    </div>
+  <script>
+    var todoText = document.getElementById('todoText');
+    var addButton = document.getElementById('addButton');
+    var todoList = document.getElementById('todoList');
+    addButton.addEventListener('click',function() {
+      var text = todoText.value.trim();
+      if(text != '') {
+        var newTodo = document.createElement('li')
+        newTodo.className = 'list-group-item list-group-item-warning list-group-item-action';
+        newTodo.textContent = text;
+        newTodo.addEventListener('click',function(e) {
+          var clickedTodo = e.target;
+          clickedTodo.parentNode.removeChild(clickedTodo);
+        });
+        todoList.appendChild(newTodo);
+        todoText.value = '';
+      }
+    });
+  </script>
+  </body>
+</html>
