@@ -8,7 +8,7 @@
   </head>
   <body class="bg-light">
     <div class="container" style="max-width:480px;">
-      <h1 class="text-center text-danger mt-5 mb-3 font-weight-bold">TODO</h1>
+      <h1 class="text-center text-success mt-5 mb-3 font-weight-bold">TODO</h1>
       <div class="form-group">
           <input id="todoText" type="text" placeholder="What is your TODO ?" class="form-control form-control-lg">
       </div>
@@ -28,7 +28,7 @@
       var text = todoText.value.trim();
       if(text != '') {
         var newTodo = document.createElement('li');
-        newTodo.className = 'list-group-item list-group-item-warning list-group-item-action';
+        newTodo.className = 'list-group-item list-group-item-success list-group-item-action';
         newTodo.textContent = text;
         newTodo.addEventListener('click',function(e) {
           var clickedTodo = e.target;
